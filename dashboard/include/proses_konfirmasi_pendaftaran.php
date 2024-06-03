@@ -12,12 +12,12 @@ if (isset($_GET['idd'])) {
 	$idd 		=	$_GET['idd'];
 	
 
-	$queryAge 	=	"SELECT tanggal_lahir FROM pendaftaran WHERE Id = $idd";
+	$queryAge 	=	"SELECT tanggal_lahir, kelas FROM pendaftaran WHERE Id = $idd";
 	$exec2		= 	mysqli_query($conn, $queryAge); 
 
 	if ($exec2) {
 		$tanggal_lahir	=	mysqli_fetch_array($exec2);
-		$kelas 	= findage($tanggal_lahir['tanggal_lahir']);
+		$kelas 	= $tanggal_lahir['kelas'];
 		$age 	= getAge($tanggal_lahir['tanggal_lahir']);
 	}else{
 		echo mysqli_error($conn);

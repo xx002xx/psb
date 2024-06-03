@@ -185,9 +185,30 @@
                                        <option value="Wiraswasta"
                                           <?php if(isset($_SESSION['father_job']) && $_SESSION['father_job'] == 'Wiraswasta') echo 'selected'; ?>>
                                           Wiraswasta</option>
+
+                                       <option value="Petani"
+                                          <?php if(isset($_SESSION['father_job']) && $_SESSION['father_job'] == 'Petani') echo 'selected'; ?>>
+                                          Petani</option>
+                                       <option value="Nelayan"
+                                          <?php if(isset($_SESSION['father_job']) && $_SESSION['father_job'] == 'Nelayan') echo 'selected'; ?>>
+                                          Nelayan</option>
+                                       <option value="Guru"
+                                          <?php if(isset($_SESSION['father_job']) && $_SESSION['father_job'] == 'Guru') echo 'selected'; ?>>
+                                          Guru</option>
+                                       <option value="Dokter"
+                                          <?php if(isset($_SESSION['father_job']) && $_SESSION['father_job'] == 'Dokter') echo 'selected'; ?>>
+                                          Dokter</option>
+                                       <option value="Polisi"
+                                          <?php if(isset($_SESSION['father_job']) && $_SESSION['father_job'] == 'Polisi') echo 'selected'; ?>>
+                                          Polisi</option>
+                                       <option value="Tentara"
+                                          <?php if(isset($_SESSION['father_job']) && $_SESSION['father_job'] == 'Tentara') echo 'selected'; ?>>
+                                          Tentara</option>
                                        <option value="Lainnya"
                                           <?php if(isset($_SESSION['father_job']) && $_SESSION['father_job'] == 'Lainnya') echo 'selected'; ?>>
                                           Lainnya</option>
+
+
                                     </select>
                                  </div>
                               </div>
@@ -312,6 +333,25 @@
                                     <option value="Pengusaha"
                                        <?php echo (isset($_SESSION['mother_job']) && $_SESSION['mother_job'] == 'Pengusaha') ? 'selected' : ''; ?>>
                                        Pengusaha</option>
+                                    <option value="Ibu Rumah Tangga"
+                                       <?php echo (isset($_SESSION['mother_job']) && $_SESSION['mother_job'] == 'Ibu Rumah Tangga') ? 'selected' : ''; ?>>
+                                       Ibu Rumah Tangga</option>
+                                    <option value="Wiraswasta"
+                                       <?php echo (isset($_SESSION['mother_job']) && $_SESSION['mother_job'] == 'Wiraswasta') ? 'selected' : ''; ?>>
+                                       Wiraswasta</option>
+                                    <option value="Karyawan Swasta"
+                                       <?php echo (isset($_SESSION['mother_job']) && $_SESSION['mother_job'] == 'Karyawan Swasta') ? 'selected' : ''; ?>>
+                                       Karyawan Swasta</option>
+                                    <option value="Pekerja Lepas"
+                                       <?php echo (isset($_SESSION['mother_job']) && $_SESSION['mother_job'] == 'Pekerja Lepas') ? 'selected' : ''; ?>>
+                                       Pekerja Lepas</option>
+                                    <option value="Pedagang"
+                                       <?php echo (isset($_SESSION['mother_job']) && $_SESSION['mother_job'] == 'Pedagang') ? 'selected' : ''; ?>>
+                                       Pedagang</option>
+                                    <option value="Lainnya"
+                                       <?php echo (isset($_SESSION['mother_job']) && $_SESSION['mother_job'] == 'Lainnya') ? 'selected' : ''; ?>>
+                                       Lainnya</option>
+
                                     <!-- Anda bisa menambahkan pilihan pekerjaan lainnya sesuai kebutuhan -->
                                  </select>
                               </div>
@@ -341,6 +381,9 @@
                                     <option value="Konghucu"
                                        <?php echo (isset($_SESSION['mother_religion']) && $_SESSION['mother_religion'] == 'Konghucu') ? 'selected' : ''; ?>>
                                        Konghucu</option>
+                                    <option value="Katolik"
+                                       <?php if(isset($_SESSION['agama_ayah']) && $_SESSION['agama_ayah'] == 'Katolik') echo 'selected'; ?>>
+                                       Katolik</option>
                                     <!-- Anda bisa menambahkan pilihan agama lainnya sesuai kebutuhan -->
                                  </select>
                               </div>

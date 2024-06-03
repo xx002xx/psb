@@ -83,17 +83,7 @@
                            </div>
                         </div>
                      </div>
-                     <div class="row">
-                        <div class="col-md-12">
-                           <div class="form-group label-floating">
-                              <label class="control-label">NIS Siswa</label>
-                              <input type="text" class="form-control" name="nis_siswa" required
-                                 value="<?php echo isset($_SESSION['nis_siswa']) ? $_SESSION['nis_siswa'] : ''; ?>"
-                                 maxlength="16" placeholder="Max 16 karakter dan hanya angka"
-                                 onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
-                           </div>
-                        </div>
-                     </div>
+
                      <div class="row">
                         <div class="col-md-12">
                            <div class="form-group label-floating">
@@ -101,16 +91,16 @@
                               <select class="form-control" name="kelas" required>
                                  <option value="A"
                                     <?php echo (isset($_SESSION['kelas']) && $_SESSION['kelas'] == 'A') ? 'selected' : ''; ?>>
-                                    A</option>
+                                    A SLB-A : Teruntuk anak-anak tunanetra</option>
                                  <option value="B"
                                     <?php echo (isset($_SESSION['kelas']) && $_SESSION['kelas'] == 'B') ? 'selected' : ''; ?>>
-                                    B</option>
+                                    B SLB-B : Teruntuk anak-anak tunarungu</option>
                                  <option value="C"
                                     <?php echo (isset($_SESSION['kelas']) && $_SESSION['kelas'] == 'C') ? 'selected' : ''; ?>>
-                                    C</option>
+                                    C SLB-C : Teruntuk anak-anak yang memiliki intelegensi di bawah rata-rata</option>
                                  <option value="D"
                                     <?php echo (isset($_SESSION['kelas']) && $_SESSION['kelas'] == 'D') ? 'selected' : ''; ?>>
-                                    D</option>
+                                    D SLB-D : Teruntuk anak-anak tunadaksa (tidak memiliki fisik yang sempurna)</option>
 
                               </select>
                            </div>

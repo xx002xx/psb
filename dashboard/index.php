@@ -25,7 +25,7 @@ if ($_SESSION['role_user'] == 0) {
 
 }else{
 	$role = "User";
-    $query      = "SELECT a.*,b.* FROM pendaftaran a, akun b WHERE a.id = $id AND b.id_user=$id";
+    $query      = "SELECT a.*,b.*, a.id as id_pendaftaran, c.id as id_dtl FROM pendaftaran a, akun b, detail_pendaftaran c WHERE a.id = $id AND b.id_user=$id AND c.id_user=$id ";
 
     $exec       = mysqli_query($conn, $query);
 
@@ -39,7 +39,9 @@ if ($_SESSION['role_user'] == 0) {
     }
 }
 
-
+if (!empty($_SESSION)) {
+          // print_r($_SESSION);
+        }
 
 
 $getPage = $_GET['page'];
@@ -158,6 +160,10 @@ switch ($getPage) {
         $page               = "include/konfirmasi_pembayaran_kegiatan.php";
         $_SESSION['active'] = "7";
         break;
+   case 28:
+        $page               = "include/informasipendidikan.php";
+        $_SESSION['active'] = "28";
+        break;
 	default:
 		$page 	= "include/home.php";
 		$_SESSION['active']	= "1";
@@ -199,7 +205,7 @@ switch ($getPage) {
                 Tip 2: you can also add an image using data-image tag
             -->
          <div class="logo">
-            <a href="http://www.anggitprayogo.com" class="simple-text">
+            <a href="http://www.anggitprayogo.com" class="simple-text" style="font-size: 10px;">
                Selamat datang <?php $role == "Admin" ? print($nama_admin) : print($nama_panggilan); ?>
             </a>
          </div>
@@ -221,14 +227,12 @@ switch ($getPage) {
                      <p>User Profile</p>
                   </a>
                </li>
-               <ul>
-                  <li class="">
-                     <a href="#" id="link_xxxxx">
-                        <i class="material-icons">person</i>
-                        <p>Informasi Pendidikan</p>
-                     </a>
-                  </li>
-               </ul>
+               <li class="<?php $_SESSION['active'] == 28 ? print("active") : print("") ?>">
+                  <a href="index.php?page=28">
+                     <i class="material-icons">person</i>
+                     <p>Informasi Pendidikan</p>
+                  </a>
+               </li>
                <?php
 					}
 					?>
@@ -240,7 +244,7 @@ switch ($getPage) {
                <li class="<?php $_SESSION['active'] == 4 ? print("active") : print("") ?>">
                   <a href="index.php?page=7">
                      <i class="material-icons">content_paste</i>
-                     <p>Konfirmasi Pembayaran</p>
+                     <p>Konfirmasi Pendaftaran</p>
                   </a>
                </li>
                <li class="<?php $_SESSION['active'] == 6 ? print("active") : print("") ?>">
@@ -308,7 +312,7 @@ switch ($getPage) {
                <li class="<?php $_SESSION['active'] == 7 ? print("active") : print("") ?>">
                   <a href="index.php?page=14">
                      <i class="material-icons">library_books</i>
-                     <p>Konfirmasi Pembayaran</p>
+                     <p>Konfirmasi Pendaftaran</p>
                   </a>
                </li>
                <li class="<?php $_SESSION['active'] == 12 ? print("active") : print("") ?>">

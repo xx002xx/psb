@@ -1,8 +1,9 @@
-
-
-
-<center><h2>Rincian Pembayaran Pendaftaran</h2></center>
-<center><h3><b>TK RA Nurul Huda</b></h3></center>
+<center>
+   <h2>Rincian Pembayaran Pendaftaran</h2>
+</center>
+<center>
+   <h3><b>TK RA Nurul Huda</b></h3>
+</center>
 <center>______________________________________________________________________________________________</center>
 
 <?php  
@@ -45,183 +46,185 @@ if($execx){
 
 
 <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-10 col-lg-offset-1">
-        <div class="card" style="margin-top: 50px">
-            <div class="card-header" data-background-color="blue">
-                <h4 class="title">Biaya yang harus dibayarkan</h4>
-                <p class="category"></p>
-            </div>
-            <div class="card-content">
-            
+   <div class="col-sm-12 col-md-8 col-lg-10 col-lg-offset-1">
+      <div class="card" style="margin-top: 50px">
+         <div class="card-header" data-background-color="blue">
+            <h4 class="title">Biaya yang harus dibayarkan</h4>
+            <p class="category"></p>
+         </div>
+         <div class="card-content">
 
 
-            <h4><b><?php echo $nama; ?></b>, Anda masuk kedalam kelas <?php echo "<b>".$daftar['kelas']."</b>"; ?> dengan metode pembayaran 
-            	<?php $metode_pembayaran == 0 ? print("<b><i>LUNAS</i></b>") : print("<b><i>CICILAN</i></b>"); ?>:</h4>
-			
-			<?php  
 
-			if ($daftar['kelas'] == 'A') {
+            <h4><b><?php echo $nama; ?></b>, Anda masuk kedalam kelas <?php echo "<b>".$daftar['kelas']."</b>"; ?>
+               dengan metode pembayaran
+               <?php $metode_pembayaran == 0 ? print("<b><i>LUNAS</i></b>") : print("<b><i>CICILAN</i></b>"); ?>:</h4>
+
+            <?php  
+
+			if ($daftar['kelas'] != '') {
 			?>
-			
-				
-				<?php 
+
+
+            <?php 
 
 				if ($metode_pembayaran == 0) {
 				?>
 
-				<ol>
-				<li><b>Kelas A : </b></li>
-				<table class="table table-responsive table-hove">
-					<thead>
-						<tr>
-							<th>Jenis Pengeluaran</th>
-							<th align="right">Biaya</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Uang pangkal gedung</td>
-							<td align="right">350.000</td>
-						</tr>
-						<tr>
-							<td>Uang Administrasi dan Seragam 5 Hari</td>
-							<td align="right">445.000</td>
-						</tr>
-						<tr>
-							<td>Uang pembayaran bulan 1 (pertama)</td>
-							<td align="right">85.000</td>
-						</tr>
-						<tr>
-							<td align="center"><b>Total</b></td>
-							<td align="right"><b>Rp.880.000</b></td>
-						</tr>
-					</tbody>
-				</table>
-				<?php
+            <ol>
+               <li><b>Kelas <?php echo $daftar['kelas'] ?> : </b>
+               </li>
+               <table class="table table-responsive table-hove">
+                  <thead>
+                     <tr>
+                        <th>Jenis Pengeluaran</th>
+                        <th align="right">Biaya</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>Uang pangkal gedung</td>
+                        <td align="right">350.000</td>
+                     </tr>
+                     <tr>
+                        <td>Uang Administrasi dan Seragam 5 Hari</td>
+                        <td align="right">445.000</td>
+                     </tr>
+                     <tr>
+                        <td>Uang pembayaran bulan 1 (pertama)</td>
+                        <td align="right">85.000</td>
+                     </tr>
+                     <tr>
+                        <td align="center"><b>Total</b></td>
+                        <td align="right"><b>Rp.880.000</b></td>
+                     </tr>
+                  </tbody>
+               </table>
+               <?php
 				}else{
 				?>
 
-				<ol>
-				<li><b>Kelas A CICILAN 1 : </b></li>
-				<table class="table table-responsive table-hove">
-					<thead>
-						<tr>
-							<th>Jenis Pengeluaran</th>
-							<th align="right">Biaya</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Uang pangkal gedung</td>
-							<td align="right">155.000</td>
-						</tr>
-						<tr>
-							<td>Uang Administrasi dan Seragam 5 Hari</td>
-							<td align="right">200.000</td>
-						</tr>
-						<tr>
-							<td>Uang pembayaran bulan 1 (pertama)</td>
-							<td align="right">85.000</td>
-						</tr>
-						<tr>
-							<td align="center"><b>Total</b></td>
-							<td align="right"><b>Rp.440.000</b></td>
-						</tr>
-					</tbody>
-				</table>
-				<?php
+               <ol>
+                  <li><b>Kelas <?php echo $daftar['kelas'] ?> CICILAN 1 : </b></li>
+                  <table class="table table-responsive table-hove">
+                     <thead>
+                        <tr>
+                           <th>Jenis Pengeluaran</th>
+                           <th align="right">Biaya</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Uang pangkal gedung</td>
+                           <td align="right">155.000</td>
+                        </tr>
+                        <tr>
+                           <td>Uang Administrasi dan Seragam 5 Hari</td>
+                           <td align="right">200.000</td>
+                        </tr>
+                        <tr>
+                           <td>Uang pembayaran bulan 1 (pertama)</td>
+                           <td align="right">85.000</td>
+                        </tr>
+                        <tr>
+                           <td align="center"><b>Total</b></td>
+                           <td align="right"><b>Rp.440.000</b></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <?php
 				}
 				?>
 
-				
-			
-			<?php
+
+
+                  <?php
 			}else{
 			?>
 
-				<?php 
+                  <?php 
 
 				if ($metode_pembayaran == 0) {
 				?>
 
-				<ol>
-				<li><b>Kelas B : </b></li>
-				<table class="table table-responsive table-hove">
-					<thead>
-						<tr>
-							<th>Jenis Pengeluaran</th>
-							<th align="right">Biaya</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Uang pangkal gedung</td>
-							<td align="right">350.000</td>
-						</tr>
-						<tr>
-							<td>Uang Administrasi dan Seragam 5 Hari</td>
-							<td align="right">445.000</td>
-						</tr>
-						<tr>
-							<td>Uang pembayaran bulan 1 (pertama)</td>
-							<td align="right">100.000</td>
-						</tr>
-						<tr>
-							<td align="center"><b>Total</b></td>
-							<td align="right"><b>Rp.895.000</b></td>
-						</tr>
-					</tbody>
-				</table>
-				<?php
+                  <ol>
+                     <li><b>Kelas <?php echo $daftar['kelas'] ?> : </b></li>
+                     <table class="table table-responsive table-hove">
+                        <thead>
+                           <tr>
+                              <th>Jenis Pengeluaran</th>
+                              <th align="right">Biaya</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td>Uang pangkal gedung</td>
+                              <td align="right">350.000</td>
+                           </tr>
+                           <tr>
+                              <td>Uang Administrasi dan Seragam 5 Hari</td>
+                              <td align="right">445.000</td>
+                           </tr>
+                           <tr>
+                              <td>Uang pembayaran bulan 1 (pertama)</td>
+                              <td align="right">100.000</td>
+                           </tr>
+                           <tr>
+                              <td align="center"><b>Total</b></td>
+                              <td align="right"><b>Rp.895.000</b></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                     <?php
 				}else{
 				?>
 
-				<ol>
-				<li><b>Kelas A CICILAN 1 : </b></li>
-				<table class="table table-responsive table-hove">
-					<thead>
-						<tr>
-							<th>Jenis Pengeluaran</th>
-							<th align="right">Biaya</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Uang pangkal gedung</td>
-							<td align="right">200.000</td>
-						</tr>
-						<tr>
-							<td>Uang Administrasi dan Seragam 5 Hari</td>
-							<td align="right">200.000</td>
-						</tr>
-						<tr>
-							<td>Uang pembayaran bulan 1 (pertama)</td>
-							<td align="right">100.000</td>
-						</tr>
-						<tr>
-							<td align="center"><b>Total</b></td>
-							<td align="right"><b>Rp.500.000</b></td>
-						</tr>
-					</tbody>
-				</table>
-				<?php
+                     <ol>
+                        <li><b>Kelas <?php echo $daftar['kelas'] ?> CICILAN 1 : </b></li>
+                        <table class="table table-responsive table-hove">
+                           <thead>
+                              <tr>
+                                 <th>Jenis Pengeluaran</th>
+                                 <th align="right">Biaya</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td>Uang pangkal gedung</td>
+                                 <td align="right">200.000</td>
+                              </tr>
+                              <tr>
+                                 <td>Uang Administrasi dan Seragam 5 Hari</td>
+                                 <td align="right">200.000</td>
+                              </tr>
+                              <tr>
+                                 <td>Uang pembayaran bulan 1 (pertama)</td>
+                                 <td align="right">100.000</td>
+                              </tr>
+                              <tr>
+                                 <td align="center"><b>Total</b></td>
+                                 <td align="right"><b>Rp.500.000</b></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                        <?php
 				}
 				?>
-				
-			<?php
+
+                        <?php
 			}
 
 			?>
 
-				
-				
-			</ol>
-			
-			<p>Lakukan pembayaran ke rekening XXX a.n XXX</p>
 
-			<b>Lakukan konfirmasi dihalaman konfirmasi pendaftaran</b>
-			<br>
-			<?php  
+
+                     </ol>
+
+                     <p>Lakukan pembayaran ke rekening XXX a.n XXX</p>
+
+                     <b>Lakukan konfirmasi dihalaman konfirmasi pendaftaran</b>
+                     <br>
+                     <?php  
 
 			// if ($daftar['status_pendaftaran'] == 1) {
     
@@ -238,15 +241,13 @@ if($execx){
 			// }
 
 			?>
-            
-            <h5 align="right">Tanggal Cetak	:	<b><?php echo date("Y-m-d"); ?></b></h5>
-			
-			<button class="btn btn-primary btn-md pull-right" id="cetak"><i class="fa fa-print"></i>&nbsp; Cetak</button>	
 
-            </div>
-        </div>
-    </div>
+                     <h5 align="right">Tanggal Cetak : <b><?php echo date("Y-m-d"); ?></b></h5>
+
+                     <button class="btn btn-primary btn-md pull-right" id="cetak"><i class="fa fa-print"></i>&nbsp;
+                        Cetak</button>
+
+         </div>
+      </div>
+   </div>
 </div>
-
-
-

@@ -97,47 +97,49 @@ if (isset($_POST['upload'])) {
 ?>
 
 <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-10 col-lg-offset-1">
-        <div class="card" style="margin-top: 50px">
-            <div class="card-header" data-background-color="blue">
-                <h4 class="title">Upload Akte(PDF, JPEG, PNG) dan Kartu Keluarga(PDF, JPEG, PNG)</h4>
-                <p class="category">Upload dengan format yang benar(PDF, JPEG, PNG)</p>
-                <a href="index.php?page=4" class="btn btn-primary btn-md pull-right" style="margin-top: -40px;"><i class="fa fa-arrow-left"></i> Kembali</a>
-            </div>
-            <div class="card-content">
-                <form action="" method="post" enctype="multipart/form-data">
-                    <div class="row">
-                        
+   <div class="col-sm-12 col-md-8 col-lg-10 col-lg-offset-1">
+      <div class="card" style="margin-top: 50px">
+         <div class="card-header" data-background-color="blue">
+            <h4 class="title">Upload Akte(PDF, JPEG, PNG) dan Kartu Keluarga(PDF, JPEG, PNG)</h4>
+            <p class="category">Upload dengan format yang benar(PDF, JPEG, PNG)</p>
+            <a href="index.php?page=4" class="btn btn-primary btn-md pull-right" style="margin-top: -40px;"><i
+                  class="fa fa-arrow-left"></i> Kembali</a>
+         </div>
+         <div class="card-content">
+            <form action="" method="post" enctype="multipart/form-data">
+               <div class="row">
 
-                        <div class="form-group floating-label" style="margin-left: 20px;">
-                            <label class="col-sm-12">Akte Kelahiran(PDF, JPEG, PNG) : </label>
-                            <label class="btn btn-primary" for="my-file-selector">
-                                <input id="my-file-selector" name="akte" type="file" style="display:none" 
-                                onchange="$('#upload-file-info').html(this.files[0].name)">
-                                Upload Akte (PDF, JPEG, PNG)
-                            </label>
-                            <span class='label label-info' id="upload-file-info"></span>
-                        </div>
-                    
-                    </div>
 
-                    <div class="row">
-                        <div class="form-group floating-label" style="margin-left: 20px;">
-                            <label class="col-sm-12">Kartu Keluarga(PDF, JPEG, PNG) : </label>
-                            <label class="btn btn-primary" for="my-file-selector2">
-                                <input id="my-file-selector2" name="foto2r" type="file" style="display:none" 
-                                onchange="$('#upload-file-info2').html(this.files[0].name)">
-                                Upload Kartu Keluarga Keluarga (PDF, JPEG, PNG)
-                            </label>
-                            <span class='label label-info' id="upload-file-info2"></span>
-                        </div>
-                    </div>
-                       
-                    <hr> 
+                  <div class="form-group floating-label" style="margin-left: 20px;">
+                     <label class="col-sm-12">Akte kelahiran dan kartu keluarga 2 lembar(PDF, JPEG, PNG) : </label>
+                     <label class="btn btn-primary" for="my-file-selector">
+                        <input id="my-file-selector" name="akte" type="file" style="display:none"
+                           onchange="$('#upload-file-info').html(this.files[0].name)">
+                        Upload Akte (PDF, JPEG, PNG)
+                     </label>
+                     <span class='label label-info' id="upload-file-info"></span>
+                  </div>
 
-                    <button type="submit" name="upload" class="btn btn-primary blue pull-right"><i class="fa fa-upload"></i> Upload File</button>
-                </form>
-            </div>
-        </div>
-    </div>
+               </div>
+
+               <div class="row">
+                  <div class="form-group floating-label" style="margin-left: 20px;">
+                     <label class="col-sm-12">Kartu Keluarga(PDF, JPEG, PNG) : </label>
+                     <label class="btn btn-primary" for="my-file-selector2">
+                        <input id="my-file-selector2" name="foto2r" type="file" style="display:none"
+                           onchange="$('#upload-file-info2').html(this.files[0].name)">
+                        Upload Kartu Keluarga Keluarga (PDF, JPEG, PNG)
+                     </label>
+                     <span class='label label-info' id="upload-file-info2"></span>
+                  </div>
+               </div>
+
+               <hr>
+
+               <button type="submit" name="upload" class="btn btn-primary blue pull-right"><i class="fa fa-upload"></i>
+                  Upload File</button>
+            </form>
+         </div>
+      </div>
+   </div>
 </div>

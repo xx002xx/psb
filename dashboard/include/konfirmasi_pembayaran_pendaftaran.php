@@ -48,11 +48,11 @@ if (isset($_POST['upload'])) {
                     
 
                     if ($kelas == "A") {
-                        $budget =   880000;
+                        $budget =   895000;
                     }elseif($kelas == "B"){
                         $budget = 895000;
                     }else{
-                        $budget = 0;
+                        $budget = 895000;
                     }
 
                     $query2 =   "INSERT INTO cicilan_pendaftaran 
@@ -154,40 +154,39 @@ if (isset($_POST['upload'])) {
 <a href="index.php?page=14" class="btn btn-primary btn-md pull-right"><i class="fa fa-arrow-left"></i> Kembali</a>
 
 <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-10 col-lg-offset-1">
-        <div class="card" style="margin-top: 50px">
-            <div class="card-header" data-background-color="blue">
-                <h4 class="title">Kofirmasi Pembayaran Pendaftaran</h4>
-                <p class="category">Upload bukti pembayaran dalam format yang ditentukan (PNG/JPEG/PDF)</p>
-            </div>
-            <div class="card-content">
-            	
-            	<form action="" method="post" enctype="multipart/form-data">
-                    <div class="row">
-                        
+   <div class="col-sm-12 col-md-8 col-lg-10 col-lg-offset-1">
+      <div class="card" style="margin-top: 50px">
+         <div class="card-header" data-background-color="blue">
+            <h4 class="title">Kofirmasi Pembayaran Pendaftaran</h4>
+            <p class="category">Upload bukti pembayaran dalam format yang ditentukan (PNG/JPEG/PDF)</p>
+         </div>
+         <div class="card-content">
 
-                        <div class="form-group floating-label" style="margin-left: 20px;">
-                            <label class="col-sm-12">Bukti Pembayaran/Struk Transfer (PNG/JPEG/PDF) : </label>
-                            <label class="btn btn-primary" for="my-file-selector">
-                                <input id="my-file-selector" name="bukti" type="file" style="display:none" 
-                                onchange="$('#upload-file-info').html(this.files[0].name)">
-                                upload bukti pembayaran (PNG/JPEG/PDF)
-                            </label>
-                            <span class='label label-info' id="upload-file-info"></span>
-                        </div>
+            <form action="" method="post" enctype="multipart/form-data">
+               <div class="row">
 
-                        
-                    
-                    </div>
-                    
-                    
-                    
-                    <button type="submit" name="upload" class="btn btn-primary blue pull-right"><i class="fa fa-upload"></i> Upload File</button>
-                </form>
-            
-            </div>
-        </div>
-    </div>
+
+                  <div class="form-group floating-label" style="margin-left: 20px;">
+                     <label class="col-sm-12">Bukti Pembayaran/Struk Transfer (PNG/JPEG/PDF) : </label>
+                     <label class="btn btn-primary" for="my-file-selector">
+                        <input id="my-file-selector" name="bukti" type="file" style="display:none"
+                           onchange="$('#upload-file-info').html(this.files[0].name)">
+                        upload bukti pembayaran (PNG/JPEG/PDF)
+                     </label>
+                     <span class='label label-info' id="upload-file-info"></span>
+                  </div>
+
+
+
+               </div>
+
+
+
+               <button type="submit" name="upload" class="btn btn-primary blue pull-right"><i class="fa fa-upload"></i>
+                  Upload File</button>
+            </form>
+
+         </div>
+      </div>
+   </div>
 </div>
-
-

@@ -14,81 +14,140 @@ if($execx){
 ?>
 
 
-<div class="row"> 	
-    <div class="col-sm-12 col-md-8 col-lg-10 col-lg-offset-1">
-        <div class="card" style="margin-top: 50px">
-            <div class="card-header" data-background-color="blue">
-                <h4 class="title">Pembayaran</h4>
-                <p class="category">Isi Form pendaftaran dengan benar</p>
-            </div>
-            <div class="card-content">
-            
-            <h4><b>Print Kwitansi biaya pendaftaran yang harus dibayarkan. Ketentuan setelah pembayaran sebagai berikut:</b></h4>
-            <ol>
-            	<li>SLB-A : Teruntuk anak-anak tunanetra. SLB-B : Teruntuk anak-anak tunarungu. SLB-C : Teruntuk anak-anak yang memiliki intelegensi di bawah rata-rata. SLB-D : Teruntuk anak-anak tunadaksa (tidak memiliki fisik yang sempurna)</li>
-            	
-            </ol>    
+<div class="row">
+   <div class="col-sm-12 col-md-8 col-lg-10 col-lg-offset-1">
+      <div class="card" style="margin-top: 50px">
+         <div class="card-header" data-background-color="blue">
+            <h4 class="title">Pembayaran</h4>
+            <p class="category">Isi Form pendaftaran dengan benar</p>
+         </div>
+         <div class="card-content">
 
-            <h4><b>Biaya yang harus dibayarkan tegantung dari jenis kelasnya (A/B), kententuan sebagai berikut: </b></h4>
-			<ol>
-				<li><b>Kelas A : </b></li>
-				<table class="table table-responsive table-hove">
-					<thead>
-						<tr>
-							<th>Jenis Pengeluaran</th>
-							<th align="right">Biaya</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Uang pangkal gedung</td>
-							<td align="right">350.000</td>
-						</tr>
-						<tr>
-							<td>Uang Administrasi dan Seragam 5 Hari</td>
-							<td align="right">445.000</td>
-						</tr>
-						<tr>
-							<td>Uang pembayaran bulan 1 (pertama)</td>
-							<td align="right">85.000</td>
-						</tr>
-						<tr>
-							<td align="center"><b>Total</b></td>
-							<td align="right"><b>Rp.880.000</b></td>
-						</tr>
-					</tbody>
-				</table>
-				
-				<li><b>Kelas B : </b></li>
-				<table class="table table-responsive table-hove">
-					<thead>
-						<tr>
-							<th>Jenis Pengeluaran</th>
-							<th align="right">Biaya</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Uang pangkal gedung</td>
-							<td align="right">350.000</td>
-						</tr>
-						<tr>
-							<td>Uang Administrasi dan Seragam 5 Hari</td>
-							<td align="right">445.000</td>
-						</tr>
-						<tr>
-							<td>Uang pembayaran bulan 1 (pertama)</td>
-							<td align="right">100.000</td>
-						</tr>
-						<tr>
-							<td align="center"><b>Total</b></td>
-							<td align="right"><b>Rp.895.000</b></td>
-						</tr>
-					</tbody>
-				</table>
-			</ol>
-					
-			<?php  
+            <h4><b>Print Kwitansi biaya pendaftaran yang harus dibayarkan. Ketentuan setelah pembayaran sebagai
+                  berikut:</b></h4>
+            <ol>
+               <li>SLB-A : Teruntuk anak-anak tunanetra. SLB-B : Teruntuk anak-anak tunarungu. SLB-C : Teruntuk
+                  anak-anak yang memiliki intelegensi di bawah rata-rata. SLB-D : Teruntuk anak-anak tunadaksa (tidak
+                  memiliki fisik yang sempurna)</li>
+
+            </ol>
+
+            <h4><b>Biaya yang harus dibayarkan tegantung dari jenis kelasnya (A/B), kententuan sebagai berikut: </b>
+            </h4>
+            <ol>
+               <li><b>Kelas A : </b></li>
+               <table class="table table-responsive table-hove">
+                  <thead>
+                     <tr>
+                        <th>Jenis Pengeluaran</th>
+                        <th align="right">Biaya</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>Uang pangkal gedung</td>
+                        <td align="right">350.000</td>
+                     </tr>
+                     <tr>
+                        <td>Uang Administrasi dan Seragam 5 Hari</td>
+                        <td align="right">445.000</td>
+                     </tr>
+                     <tr>
+                        <td>Uang pembayaran bulan 1 (pertama)</td>
+                        <td align="right">100.000</td>
+                     </tr>
+                     <tr>
+                        <td align="center"><b>Total</b></td>
+                        <td align="right"><b>Rp.895.000</b></td>
+                     </tr>
+                  </tbody>
+               </table>
+
+               <li><b>Kelas B : </b></li>
+               <table class="table table-responsive table-hove">
+                  <thead>
+                     <tr>
+                        <th>Jenis Pengeluaran</th>
+                        <th align="right">Biaya</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>Uang pangkal gedung</td>
+                        <td align="right">350.000</td>
+                     </tr>
+                     <tr>
+                        <td>Uang Administrasi dan Seragam 5 Hari</td>
+                        <td align="right">445.000</td>
+                     </tr>
+                     <tr>
+                        <td>Uang pembayaran bulan 1 (pertama)</td>
+                        <td align="right">100.000</td>
+                     </tr>
+                     <tr>
+                        <td align="center"><b>Total</b></td>
+                        <td align="right"><b>Rp.895.000</b></td>
+                     </tr>
+                  </tbody>
+               </table>
+
+               <li><b>Kelas C : </b></li>
+               <table class="table table-responsive table-hove">
+                  <thead>
+                     <tr>
+                        <th>Jenis Pengeluaran</th>
+                        <th align="right">Biaya</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>Uang pangkal gedung</td>
+                        <td align="right">350.000</td>
+                     </tr>
+                     <tr>
+                        <td>Uang Administrasi dan Seragam 5 Hari</td>
+                        <td align="right">445.000</td>
+                     </tr>
+                     <tr>
+                        <td>Uang pembayaran bulan 1 (pertama)</td>
+                        <td align="right">100.000</td>
+                     </tr>
+                     <tr>
+                        <td align="center"><b>Total</b></td>
+                        <td align="right"><b>Rp.895.000</b></td>
+                     </tr>
+                  </tbody>
+               </table>
+               <li><b>Kelas D : </b></li>
+               <table class="table table-responsive table-hove">
+                  <thead>
+                     <tr>
+                        <th>Jenis Pengeluaran</th>
+                        <th align="right">Biaya</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>Uang pangkal gedung</td>
+                        <td align="right">350.000</td>
+                     </tr>
+                     <tr>
+                        <td>Uang Administrasi dan Seragam 5 Hari</td>
+                        <td align="right">445.000</td>
+                     </tr>
+                     <tr>
+                        <td>Uang pembayaran bulan 1 (pertama)</td>
+                        <td align="right">100.000</td>
+                     </tr>
+                     <tr>
+                        <td align="center"><b>Total</b></td>
+                        <td align="right"><b>Rp.895.000</b></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </ol>
+
+            <?php  
 			if ($daftar['status_pendaftaran'] == 1) {
     
 			    // echo '<a href="../assets/uploads/kwitansi-pembayaran.jpeg" class="btn btn-primary btn-md pull-left" download><i class="fa fa-print"></i> Cetak biaya yang harus dibayar untuk pendaftaran</a>';
@@ -129,11 +188,11 @@ if($execx){
 			}
 
 			?>
-                
 
-            </div>
-        </div>
-    </div>
+
+         </div>
+      </div>
+   </div>
 </div>
 
 
@@ -141,31 +200,31 @@ if($execx){
 <!-- MODAL -->
 
 <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
+   <div class="modal-dialog">
 
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Pilih Metode Pembayaran</h4>
-        </div>
-        <div class="modal-body">
-        <form action="index.php?page=13" method="get">
-        	<input type="hidden" name="page" value="13">
-          <div class="form-group">
-              <label for="">Metode Pembayaran</label>
-              <select name="metode_pembayaran" class="form-group">
-                  <option value="0">Lunas</option>
-                  <option value="1">Cicil (2x)</option>
-              </select>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
-          <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i>Pilih</button>
-          </form>
-        </div>
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Pilih Metode Pembayaran</h4>
+         </div>
+         <div class="modal-body">
+            <form action="index.php?page=13" method="get">
+               <input type="hidden" name="page" value="13">
+               <div class="form-group">
+                  <label for="">Metode Pembayaran</label>
+                  <select name="metode_pembayaran" class="form-group">
+                     <option value="0">Lunas</option>
+                     <option value="1">Cicil (2x)</option>
+                  </select>
+               </div>
+         </div>
+         <div class="modal-footer">
+            <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
+            <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i>Pilih</button>
+            </form>
+         </div>
       </div>
-      
-    </div>
+
+   </div>
 </div>

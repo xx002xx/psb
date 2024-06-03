@@ -1,73 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
+<h2>Profile</h2>
+<?php 
+$id 	= $_SESSION['auth'];
+$query      = "SELECT b.*, c.*, year(a.tanggal_daftar) as tahun_angkatan FROM akun b, detail_pendaftaran a ,siswa c WHERE  b.id_user=$id AND a.id_user=$id AND  c.id_detail_pendaftaran=a.id";
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form Siswa</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <style>
-    /* Optional custom styling can be added here */
-  </style>
-</head>
+    $exec       = mysqli_query($conn, $query);
 
-<body>
 
-  <h2>Formulir Data Siswa</h2>
-
-  <div class="container">
-    <form id="siswaForm" onsubmit="tampilkanData(); return false;">
-      <fieldset>
-        <legend>Personal Information</legend>
-
-        <div class="mb-3">
-          <label for="namaSiswa" class="form-label">Nama Siswa:</label>
-          <input type="text" class="form-control" id="namaSiswa" name="namaSiswa" required>
-        </div>
-
-        <div class="mb-3">
-          <label for="nisSiswa" class="form-label">NIS Siswa:</label>
-          <input type="text" class="form-control" id="nisSiswa" name="nisSiswa" required>
-        </div>
-
-        <div class="mb-3">
-          <label for="kelas" class="form-label">Kelas:</label>
-          <input type="text" class="form-control" id="kelas" name="kelas" required>
-        </div>
-
-        <div class="mb-3">
-          <label for="kelasKe" class="form-label">Kelas Ke:</label>
-          <input type="number" class="form-control" id="kelasKe" name="kelasKe" required>
-        </div>
-
-      </fieldset>
-
-      <button type="submit" class="btn btn-primary">Tampilkan Data</button>
-    </form>
-
-    <div id="hasilForm"></div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVFQWrvVuHvPQz7snTqYnblzut5zYM+1sR0JYLRU3BvHlldLz9tL" crossorigin="anonymous"></script>
-  <script>
-    function tampilkanData() {
-      var namaSiswa = document.getElementById("namaSiswa").value;
-      var nisSiswa = document.getElementById("nisSiswa").value;
-      var kelas = document.getElementById("kelas").value;
-      var kelasKe = document.getElementById("kelasKe").value;
-
-      var hasilForm = document.getElementById("hasilForm");
-      hasilForm.innerHTML = "<h3>Data Siswa:</h3>" +
-        "<p>Nama Siswa: " + namaSiswa + "</p>" +
-        "<p>NIS Siswa: " + nisSiswa + "</p>" +
-        "<p>Kelas: " + kelas + "</p>" +
-        "<p>Kelas Ke: " + kelasKe + "</p>";
-
-      // Clear the form after displaying data
-      document.getElementById("siswaForm").reset();
+    if ($exec) {
+        while ($user = mysqli_fetch_array($exec)) {
+            foreach ($user as $key=>$val) {
+                ${$key} = $val;
+            }       
+        }
     }
-  </script>
 
-</body>
+    $class_descriptions = [
+    'A' => 'SLB-A : Teruntuk anak-anak tunanetra',
+    'B' => 'SLB-B : Teruntuk anak-anak tunarungu',
+    'C' => 'SLB-C : Teruntuk anak-anak yang memiliki intelegensi di bawah rata-rata',
+    'D' => 'SLB-D : Teruntuk anak-anak tunadaksa (tidak memiliki fisik yang sempurna)',
+];
+?>
+<div class="col-sm-12 col-md-8 col-lg-10 col-lg-offset-1">
+   <div class="card" style="margin-top: 50px">
+      <div class="card-header" data-background-color="blue">
+         <h4 class="title">Biodata</h4>
+         <p class="category">Periksan data anda dibawah, pastikan sudah benar</p>
+      </div>
+      <div class="card-content table-responsive">
 
-</html>
+         <h3 style="overflow: hidden;"><b>Informasi Pendidikan Siswa</b></h3>
+         <table class="table table-hover">
+
+            <tbody>
+               <tr>
+                  <td><b>Nama</b></td>
+                  <td>: <?php echo $nama; ?></td>
+               </tr>
+               <tr>
+                  <td><b>NIS</b></td>
+                  <td>: <?php echo $nis; ?></td>
+               </tr>
+               <tr>
+                  <td><b>Tahun Angkatan</b></td>
+                  <td>: <?php echo $tahun_angkatan; ?></td>
+               </tr>
+               <tr>
+                  <td><b>Kelas</b></td>
+                  <td>: <?php echo $kelas; ?></td>
+               </tr>
+               <tr>
+                  <td><b>Keterangan</b></td>
+                  <td>:
+                     <?php echo isset($class_descriptions[$kelas]) ? $class_descriptions[$kelas] : 'Keterangan tidak tersedia'; ?>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
