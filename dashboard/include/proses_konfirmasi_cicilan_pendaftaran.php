@@ -156,7 +156,7 @@ if (isset($_GET['id'])) {
 
 	if ($exec) {
 		$_SESSION['message']	= "1";
-		echo '<script>window.location="../index.php?page=17"</script>';
+		echo '<script>window.location="../index.php?page=7"</script>';
 	}else{
 		echo mysqli_error($conn);
 	}

@@ -34,17 +34,31 @@ if (isset($_SESSION['message'])) {
                </thead>
                <tbody>
                   <?php  
-				    		$query 	= "SELECT a.nama, a.id as id_daftar, b.id as id_akun,a.upload_akte,a.foto_anak,b.email,c.* , d.bukti_pembayaran, d.id as idcicilan, c.id as idDetail
-				    				FROM pendaftaran a, akun b, detail_pendaftaran c, cicilan_pendaftaran d 
-						    		WHERE a.id=b.id_user 
-						    		AND b.role_user=1 
-						    		AND c.id_user = a.id
-                           AND c.id = d.id_detail_pendaftaran
-                    				AND a.upload_akte != '' 
-                    				AND a.upload_kartu_keluarga != '' 
-                    				AND a.foto_anak != '' 
-                    				AND a.foto_keluarga != ''
-									ORDER BY c.status_pendaftaran asc
+				    		$query 	= "SELECT 
+    a.nama, 
+    a.id AS id_daftar, 
+    b.id AS id_akun,
+    a.upload_akte, 
+    a.foto_anak, 
+    a.upload_kartu_keluarga,
+    b.email, 
+    c.*, 
+    d.bukti_pembayaran, 
+    d.id AS idcicilan, 
+    c.id AS idDetail
+FROM 
+    pendaftaran a
+JOIN 
+    akun b ON a.id = b.id_user
+JOIN 
+    detail_pendaftaran c ON c.id_user = a.id
+LEFT JOIN 
+    cicilan_pendaftaran d ON c.id = d.id_detail_pendaftaran
+WHERE 
+    b.role_user = 1 
+ORDER BY 
+    c.status_pendaftaran ASC;
+
 										"
 										
 										;
@@ -57,11 +71,12 @@ if (isset($_SESSION['message'])) {
 				    				while ($rows = mysqli_fetch_array($exec)) {
 				    				    
 				    				    $status = $rows['status_pendaftaran'];
-
-				    			
+                               $akte = $rows['upload_akte'];
+                               $kartu_keluarga = $rows['upload_kartu_keluarga'];
+                               $foto_anak = $rows['foto_anak'];
+    
+   
 				    	?>
-
-
                   <tr>
                      <td><?php echo ++$no; ?></td>
                      <td><?php echo $rows['nama']; ?></td>
@@ -79,9 +94,13 @@ if (isset($_SESSION['message'])) {
                            Lihat
                         </a></td>
                      <td><?php
-if ($status == 0) {
-    print("<font color='#e74c3c'>Pengajuan Baru</font>");
-} elseif ($status == 1) {
+if ($status == 0 && $akte=="" && $kartu_keluarga =="" && $foto_anak =="" ) {
+    print("<font color='#e74c3c'>Pendaftar Baru</font>");
+}
+elseif ($status == 0 && $akte <>"" && $kartu_keluarga <>"" && $foto_anak <>"") {
+    print("<font color='#f39c12'>Menunggu Verifikasi Persyaratan</font>");
+} 
+elseif ($status == 1) {
     print("<font color='#f39c12'>Menunggu Pembayaran</font>");
 } elseif ($status == 2) {
     print("<font color='#3498db'>Verifikasi Pembayaran</font>");
@@ -97,18 +116,16 @@ if ($status == 0) {
                      </td>
                      <td>
                         <?php
-                        if ($status == 0) {
+                        if ($status == 0 &&  $akte <>"" && $kartu_keluarga <>"" && $foto_anak <>"") {
                            ?>
                         <a href="include/proses_konfirmasi_pendaftaran.php?ida=<?php echo $rows['id_akun'] ?>&idd=<?php echo $rows['id_daftar'] ?>&idu=<?php echo $Id ?>"
                            class="btn btn-warning btn-sm">Konfirmasi</a>
                         <?php
                         }
                         ?>
-
                         <?php
                         if ($status == 2) {
                            ?>
-
                         <a href="#" class="btn btn-warning btn-sm"
                            onclick="konfirmasiPembayaran(<?php echo $rows['idcicilan']; ?>, <?php echo $rows['idDetail']; ?>)">Verifikasi
                            Pembayaran</a>

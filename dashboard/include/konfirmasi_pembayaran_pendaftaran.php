@@ -40,10 +40,7 @@ if (isset($_POST['upload'])) {
             $exec   = mysqli_query($conn, $query);
 
             if ($exec) {
-
-                if ($daftar['metode_pembayaran_pendaftaran'] == "L") {
-
-                    $budget =   0;
+                  $budget =   0;
 
                     
 
@@ -72,8 +69,12 @@ if (isset($_POST['upload'])) {
                     }else{
                         echo mysqli_error($conn);
                     }
+
+                if ($daftar['metode_pembayaran_pendaftaran'] == "L") {
+
+                  
                 }else{
-                    
+                   /* 
 
 
                     $queryCountCicilan  =   "SELECT * FROM cicilan_pendaftaran WHERE id_detail_pendaftaran=$idetail";
@@ -129,7 +130,7 @@ if (isset($_POST['upload'])) {
                     }else{
                         echo mysqli_erorr($conn);
                     }
-
+*/
                 }
               
             }
