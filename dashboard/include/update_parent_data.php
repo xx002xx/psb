@@ -12,6 +12,7 @@ include '../../koneksi/koneksi.php';
     $pekerjaan_ayah = $_POST['pekerjaan_ayah'];
     $agama_ayah = $_POST['agama_ayah'];
     $nama_ibu = $_POST['nama_ibu'];
+     $nik_ibu = $_POST['nik_ibu'];
     $tempat_lahir_ibu = $_POST['tempat_lahir_ibu'];
     $tanggal_lahir_ibu = $_POST['tanggal_lahir_ibu'];
     $pendidikan_terakhir_ibu = $_POST['pendidikan_terakhir_ibu'];
@@ -29,6 +30,7 @@ include '../../koneksi/koneksi.php';
                 pekerjaan_ayah = '$pekerjaan_ayah',
                 agama_ayah = '$agama_ayah',
                 nama_ibu = '$nama_ibu',
+                nik_ibu = '$nik_ibu',
                 tempat_lahir_ibu = '$tempat_lahir_ibu',
                 tanggal_lahir_ibu = '$tanggal_lahir_ibu',
                 pendidikan_terakhir_ibu = '$pendidikan_terakhir_ibu',

@@ -74,7 +74,7 @@
                <li>
                   <?php 
 
-                            if ($foto_anak != "" && $foto_keluarga != "") {
+                            if ($foto_anak != "") {
 
                                 if ($daftar['status_pendaftaran'] == 1) {
                                     echo '<font color="#2ecc71">Foto anak 2R <i class="fa fa-check"></i></font>';

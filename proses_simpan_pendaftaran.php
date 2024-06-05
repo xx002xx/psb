@@ -16,7 +16,7 @@
 					, '$birth_date' ,'$gender', '$child_number', '$child_total', '$in_jakarta_follow'
 					, '$father_name', '$birth_place_father','$birth_date_father', '$father_last_education'
 					, '$father_job', '$agama_ayah','$mother_name', '$birth_place_mother', '$birth_date_mother'
-					, '$mother_last_education', '$mother_job', '$mother_religion', '$telp','','','','','$nik_ayah','$no_telp','$kelas','$nik_siswa','$nik_siswa')";
+					, '$mother_last_education', '$mother_job', '$mother_religion', '$telp','','','','','$nik_ayah','$no_telp','$kelas','$nik_ibu','$nik_siswa')";
 		//echo "<br>query: ".$sql."<br>";
 		$exec 	= mysqli_query($conn,$sql);
 

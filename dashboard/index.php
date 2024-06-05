@@ -312,7 +312,7 @@ switch ($getPage) {
                <li class="<?php $_SESSION['active'] == 7 ? print("active") : print("") ?>">
                   <a href="index.php?page=14">
                      <i class="material-icons">library_books</i>
-                     <p>Konfirmasi Pendaftaran</p>
+                     <p>Konfirmasi Pembayaran</p>
                   </a>
                </li>
                <li class="<?php $_SESSION['active'] == 12 ? print("active") : print("") ?>">

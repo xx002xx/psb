@@ -1,11 +1,15 @@
-<h2>Konfirmasi pembayaran</h2>
+<h2>Konfirmasi Pembayaran Pendaftaran</h2>
 
 <?php  
 
 $queryx     =   "SELECT * FROM detail_pendaftaran WHERE id_user = $id";
 $execx      =   mysqli_query($conn, $queryx);
+
+$queryxc     =   "SELECT * FROM pendaftaran WHERE id = $id";
+$execxc      =   mysqli_query($conn, $queryxc);
 if($execx){
     $daftar = mysqli_fetch_array($execx);
+     $daftar2 = mysqli_fetch_array($execxc);
 
 }else{
     echo 'gagal';
@@ -42,22 +46,22 @@ $metode_pembayaran  =   $daftar['metode_pembayaran_pendaftaran'];
 
 
 <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-10 col-lg-offset-1">
-        <div class="card" style="margin-top: 50px">
-            <div class="card-header" data-background-color="blue">
-                <h4 class="title">Kofirmasi Pembayaran s</h4>
-                <p class="category">Daftar konfirmasi pembayaran</p>
-            </div>
-            <div class="card-content">
-            	
-            	<ul>
-            		
-            		<?php  
+   <div class="col-sm-12 col-md-8 col-lg-10 col-lg-offset-1">
+      <div class="card" style="margin-top: 50px">
+         <div class="card-header" data-background-color="blue">
+            <h4 class="title">Kofirmasi Pembayaran Pendaftaran</h4>
+            <p class="category">Daftar konfirmasi pembayaran</p>
+         </div>
+         <div class="card-content">
+
+            <ul>
+
+               <?php  
         			if ($daftar['status_pendaftaran'] == 1) {
         			?>
-					<li><a href="index.php?page=15" class="btn btn-primary btn-lg">Konfirmasi pembayaran pendaftaran</a></li>
-				
-        			<?php
+               <li><a href="index.php?page=15" class="btn btn-primary btn-lg">Konfirmasi pembayaran pendaftaran</a></li>
+
+               <?php
         			}elseif ($daftar['status_pendaftaran'] == 2) {
         				
                         if ($kelas == "A") {
@@ -93,11 +97,11 @@ $metode_pembayaran  =   $daftar['metode_pembayaran_pendaftaran'];
         				
         			?>
 
-        			
-        			<?php	
+
+               <?php	
         			}else if($daftar['status_pendaftaran'] == 3){
         			     
-                         if ($kelas == 'A') {
+                         if ($kelas == 'A' or $kelas == 'B' or $kelas == 'C' or $kelas == 'D' ) {
                             if ($nom >= 880000) {
                                 if ($lastStatus == 0) {
                                     echo '<li><a href="" class="btn btn-warning btn-lg">Konfirmasi pembayaran pendaftaran</a> (Sedang dikonfirmasi Admin)</li> ';
@@ -139,10 +143,10 @@ $metode_pembayaran  =   $daftar['metode_pembayaran_pendaftaran'];
                         
 
                     ?>
-                      
 
 
-                    <?php  
+
+               <?php  
 
                     $querySPP   =   "SELECT COUNT(cicilan_ke) as countSpp FROM pembayaran_spp WHERE user_id=$id AND status_spp=1";
                     $exacSPP    =   mysqli_query($conn, $querySPP);
@@ -153,7 +157,7 @@ $metode_pembayaran  =   $daftar['metode_pembayaran_pendaftaran'];
                         
 
                         if ($countSpp >= 6) {
-                            echo '<li><a href="#" class="btn btn-warning btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran SPP (SUDAH LUNAS)</a><i class="fa fa-check"></i></li>';
+                           // echo '<li><a href="#" class="btn btn-warning btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran SPP (SUDAH LUNAS)</a><i class="fa fa-check"></i></li>';
                         }else{
                             $queryStatus    =   "SELECT * FROM pembayaran_spp WHERE user_id=$id AND status_spp=0";
                             $exacStatus     =   mysqli_query($conn, $queryStatus);
@@ -162,21 +166,21 @@ $metode_pembayaran  =   $daftar['metode_pembayaran_pendaftaran'];
                                 $null   =    mysqli_num_rows($exacStatus);
 
                                 if ($null > 0) {
-                                    echo '<li><a href="#" class="btn btn-warning btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran SPP</a> (Sedang dikonfirmasi admin)</li>';
+                                  //  echo '<li><a href="#" class="btn btn-warning btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran SPP</a> (Sedang dikonfirmasi admin)</li>';
                                 }else{
-                                    echo '<li><a href="index.php?page=16" class="btn btn-primary btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran SPP</a> (Pembayaran bulan ke -'.$countSpp.')</li>';
+                                  //  echo '<li><a href="index.php?page=16" class="btn btn-primary btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran SPP</a> (Pembayaran bulan ke -'.$countSpp.')</li>';
                                 }
                             }else echo 'tidak ada';
                         }
 
                     }else {
-                        echo '<li><a href="index.php?page=16" class="btn btn-primary btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran SPP</a></li>';
+                       // echo '<li><a href="index.php?page=16" class="btn btn-primary btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran SPP</a></li>';
                     }
-                    ?>   
+                    ?>
 
 
-        			
-                    <?php
+
+               <?php
         			}else if($daftar['status_pendaftaran'] == 4){
 
                         if ($kelas == 'A') {
@@ -198,7 +202,7 @@ $metode_pembayaran  =   $daftar['metode_pembayaran_pendaftaran'];
                     ?>
 
 
-                    <?php  
+               <?php  
 
                     $querySPP   =   "SELECT COUNT(cicilan_ke) as countSpp FROM pembayaran_spp WHERE user_id=$id AND status_spp=1";
                     $exacSPP    =   mysqli_query($conn, $querySPP);
@@ -208,7 +212,7 @@ $metode_pembayaran  =   $daftar['metode_pembayaran_pendaftaran'];
                         $countSpp   =   $countSPP['countSpp'];
                         
                         if ($countSpp >= 6) {
-                            echo '<li><a href="#" class="btn btn-warning btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran SPP (SUDAH LUNAS)</a><i class="fa fa-check"></i></li>';
+                          //  echo '<li><a href="#" class="btn btn-warning btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran SPP (SUDAH LUNAS)</a><i class="fa fa-check"></i></li>';
                         }else{
                             
                             $queryStatus    =   "SELECT * FROM pembayaran_spp WHERE user_id=$id AND status_spp=0";
@@ -218,22 +222,22 @@ $metode_pembayaran  =   $daftar['metode_pembayaran_pendaftaran'];
                                 $null   =    mysqli_num_rows($exacStatus);
 
                                 if ($null > 0) {
-                                    echo '<li><a href="#" class="btn btn-warning btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran SPP</a> (Sedang dikonfirmasi admin)</li>';
+                                    //echo '<li><a href="#" class="btn btn-warning btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran SPP</a> (Sedang dikonfirmasi admin)</li>';
                                 }else{
-                                    echo '<li><a href="index.php?page=16" class="btn btn-primary btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran SPP</a> (Pembayaran bulan ke -'.++$countSpp.')</li>';
+                                  //  echo '<li><a href="index.php?page=16" class="btn btn-primary btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran SPP</a> (Pembayaran bulan ke -'.++$countSpp.')</li>';
                                 }
                             }else echo 'tidak ada';
 
                         }
 
                     }else {
-                        echo '<li><a href="index.php?page=16" class="btn btn-primary btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran SPP</a></li>';
+                      //  echo '<li><a href="index.php?page=16" class="btn btn-primary btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran SPP</a></li>';
                     }
-                    ?>   
-                        
-                            
-                        
-                    <?php  
+                    ?>
+
+
+
+               <?php  
 
                     $queryKegiatan  =   "SELECT a.* FROM detail_pendaftaran a, pendaftaran b WHERE a.id_user=$id";
                     $exacKegiatan            =   mysqli_query($conn, $queryKegiatan);
@@ -246,15 +250,15 @@ $metode_pembayaran  =   $daftar['metode_pembayaran_pendaftaran'];
                         if ($kegiatan['bukti_konfirmasi_pembayaran_kegiatan'] != null) {
                             
                             if ($kegiatan['status_kegiatan'] == 0) {
-                                echo '<li><a href="#" class="btn btn-warning btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran Kegiatan (Sedang dikofirmasi)</a></li>';
+                              //  echo '<li><a href="#" class="btn btn-warning btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran Kegiatan (Sedang dikofirmasi)</a></li>';
                             }else{
-                                echo '<li><a href="#" class="btn btn-warning btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran Kegiatan (LUNAS)</a><i class="fa fa-check"></i> 
-                                    <a href="include/cetak_bukti_pembayaran_kegiatan.php?id='.$id_detail.'" class="btn btn-sm btn-primary"><i class="fa fa-print"></i> Cetak Bukti Pembayaran Kegiatan</a>
-                                </li>';
+                              //  echo '<li><a href="#" class="btn btn-warning btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran Kegiatan (LUNAS)</a><i class="fa fa-check"></i> 
+                              //      <a href="include/cetak_bukti_pembayaran_kegiatan.php?id='.$id_detail.'" class="btn btn-sm btn-primary"><i class="fa fa-print"></i> Cetak Bukti Pembayaran Kegiatan</a>
+                               // </li>';
                             }
 
                         }else{
-                            echo '<li><a href="index.php?page=27" class="btn btn-primary btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran Kegiatan</a></li>';
+                           // echo '<li><a href="index.php?page=27" class="btn btn-primary btn-lg" title="Lakukan pembayaran pendaftaran terlebih dahulu">Konfirmasi pembayaran Kegiatan</a></li>';
                         }
 
                     }else{
@@ -264,24 +268,28 @@ $metode_pembayaran  =   $daftar['metode_pembayaran_pendaftaran'];
                     ?>
 
 
-                        
 
-                    <?php
+
+               <?php
                     }else{
+                               $akte = $daftar2['upload_akte'];
+                               $kartu_keluarga = $daftar2['upload_kartu_keluarga'];
+                               $foto_anak = $daftar2['foto_anak'];
+
+                               if($akte <>"" && $kartu_keluarga <>"" && $foto_anak <>""){
                     ?>
 
-                    <h3>Anda belum melengkapi pendaftaran atau belom dikonfirmasi oleh admin, klik  <a href="index.php?page=4">disini</a> untuk melengkapi atau melihat status daftar</h3>
-                    
-                    <?php
-                    }
-            		?>
-            		
-            	</ul>
-            
-            </div>
-        </div>
-    </div>
+               <h3>Persayaratan Menunggu Verifikasi Admin </h3>
+
+               <?php
+               }else{
+                ?> <h3>Anda belum melengkapi pendaftaran silahkan, klik <a href="index.php?page=4">disini</a> untuk
+                  melengkapinya <?php echo $foto_anak ?> </h3><?php } 
+                } ?>
+
+            </ul>
+
+         </div>
+      </div>
+   </div>
 </div>
-
-
-

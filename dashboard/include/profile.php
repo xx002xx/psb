@@ -169,6 +169,10 @@
                   <td>: <?php echo $nama_ibu;; ?></td>
                </tr>
                <tr>
+                  <td><b>NIK Ibu</b></td>
+                  <td>: <?php echo $nik_ibu; ?></td>
+               </tr>
+               <tr>
                   <td><b>TTL</b></td>
                   <td>: <?php echo $tempat_lahir_ibu.", ".$tanggal_lahir_ibu; ?></td>
                </tr>
@@ -294,6 +298,11 @@
                            <label for="nama_ibu">Nama Ibu</label>
                            <input type="text" class="form-control" id="nama_ibu" name="nama_ibu"
                               value="<?php echo $nama_ibu; ?>" required>
+                        </div>
+                        <div class="form-group">
+                           <label for="nama_ibu">NIK Ibu</label>
+                           <input type="text" class="form-control" id="nik_ibu" name="nik_ibu"
+                              value="<?php echo $nik_ibu; ?>" required>
                         </div>
                         <div class="form-group">
                            <label for="tempat_lahir_ibu">Tempat Lahir Ibu</label>

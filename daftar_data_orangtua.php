@@ -262,6 +262,19 @@
                         <div class="row">
                            <div class="col-md-12">
                               <div class="form-group label-floating">
+                                 <label class="control-label">NIK</label>
+                                 <input type="text" class="form-control" name="nik_ibu"
+                                    placeholder="Masukkan NIK (maksimal 16 karakter)" maxlength="16"
+                                    onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
+                                    value="<?php echo isset($_SESSION['nik_ibu']) ? $_SESSION['nik_ibu'] : ''; ?>"
+                                    required>
+
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-12">
+                              <div class="form-group label-floating">
                                  <label class="control-label">Nama Ibu</label>
                                  <input type="text" class="form-control" name="mother_name" required
                                     value="<?php isset($_SESSION['mother_name'])  ?  print($_SESSION['mother_name']) : ""; ?>"

@@ -34,7 +34,7 @@ if (isset($_SESSION['message'])) {
                   <ul>
                      <?php  
                         $querySeninA    =   "SELECT * FROM jadwal a, mapel b WHERE id_hari=1 AND a.id_mapel=b.kode_mapel_kegiatan
-                                            AND a.kelas='B'";
+                                            AND a.kelas='A'";
                         $execSeninA     =   mysqli_query($conn, $querySeninA);
 
                         if ($execSeninA) {
@@ -62,7 +62,7 @@ if (isset($_SESSION['message'])) {
                   <ul>
                      <?php  
                         $querySeninA    =   "SELECT * FROM jadwal a, mapel b WHERE id_hari=2 AND a.id_mapel=b.kode_mapel_kegiatan
-                                            AND a.kelas='B'";
+                                            AND a.kelas='A'";
                         $execSeninA     =   mysqli_query($conn, $querySeninA);
 
                         if ($execSeninA) {
@@ -88,7 +88,7 @@ if (isset($_SESSION['message'])) {
                   <ul>
                      <?php  
                         $querySeninA    =   "SELECT * FROM jadwal a, mapel b WHERE id_hari=3 AND a.id_mapel=b.kode_mapel_kegiatan
-                                            AND a.kelas='B'";
+                                            AND a.kelas='A'";
                         $execSeninA     =   mysqli_query($conn, $querySeninA);
 
                         if ($execSeninA) {
@@ -114,7 +114,7 @@ if (isset($_SESSION['message'])) {
                   <ul>
                      <?php  
                         $querySeninA    =   "SELECT * FROM jadwal a, mapel b WHERE id_hari=4 AND a.id_mapel=b.kode_mapel_kegiatan
-                                            AND a.kelas='B'";
+                                            AND a.kelas='A'";
                         $execSeninA     =   mysqli_query($conn, $querySeninA);
 
                         if ($execSeninA) {
@@ -143,7 +143,7 @@ if (isset($_SESSION['message'])) {
                   <ul>
                      <?php  
                         $querySeninA    =   "SELECT * FROM jadwal a, mapel b WHERE id_hari=5 AND a.id_mapel=b.kode_mapel_kegiatan
-                                            AND a.kelas='B'";
+                                            AND a.kelas='A'";
                         $execSeninA     =   mysqli_query($conn, $querySeninA);
 
                         if ($execSeninA) {
@@ -379,7 +379,7 @@ if (isset($_SESSION['message'])) {
                   <ul>
                      <?php  
                         $querySeninA    =   "SELECT * FROM jadwal a, mapel b WHERE id_hari=1 AND a.id_mapel=b.kode_mapel_kegiatan
-                                            AND a.kelas='B'";
+                                            AND a.kelas='C'";
                         $execSeninA     =   mysqli_query($conn, $querySeninA);
 
                         if ($execSeninA) {
@@ -407,7 +407,7 @@ if (isset($_SESSION['message'])) {
                   <ul>
                      <?php  
                         $querySeninA    =   "SELECT * FROM jadwal a, mapel b WHERE id_hari=2 AND a.id_mapel=b.kode_mapel_kegiatan
-                                            AND a.kelas='B'";
+                                            AND a.kelas='C'";
                         $execSeninA     =   mysqli_query($conn, $querySeninA);
 
                         if ($execSeninA) {
@@ -433,7 +433,7 @@ if (isset($_SESSION['message'])) {
                   <ul>
                      <?php  
                         $querySeninA    =   "SELECT * FROM jadwal a, mapel b WHERE id_hari=3 AND a.id_mapel=b.kode_mapel_kegiatan
-                                            AND a.kelas='B'";
+                                            AND a.kelas='C'";
                         $execSeninA     =   mysqli_query($conn, $querySeninA);
 
                         if ($execSeninA) {
@@ -459,7 +459,7 @@ if (isset($_SESSION['message'])) {
                   <ul>
                      <?php  
                         $querySeninA    =   "SELECT * FROM jadwal a, mapel b WHERE id_hari=4 AND a.id_mapel=b.kode_mapel_kegiatan
-                                            AND a.kelas='B'";
+                                            AND a.kelas='C'";
                         $execSeninA     =   mysqli_query($conn, $querySeninA);
 
                         if ($execSeninA) {
@@ -488,7 +488,7 @@ if (isset($_SESSION['message'])) {
                   <ul>
                      <?php  
                         $querySeninA    =   "SELECT * FROM jadwal a, mapel b WHERE id_hari=5 AND a.id_mapel=b.kode_mapel_kegiatan
-                                            AND a.kelas='B'";
+                                            AND a.kelas='C'";
                         $execSeninA     =   mysqli_query($conn, $querySeninA);
 
                         if ($execSeninA) {
@@ -549,7 +549,7 @@ if (isset($_SESSION['message'])) {
                   <ul>
                      <?php  
                         $querySeninA    =   "SELECT * FROM jadwal a, mapel b WHERE id_hari=1 AND a.id_mapel=b.kode_mapel_kegiatan
-                                            AND a.kelas='B'";
+                                            AND a.kelas='D'";
                         $execSeninA     =   mysqli_query($conn, $querySeninA);
 
                         if ($execSeninA) {
@@ -577,7 +577,7 @@ if (isset($_SESSION['message'])) {
                   <ul>
                      <?php  
                         $querySeninA    =   "SELECT * FROM jadwal a, mapel b WHERE id_hari=2 AND a.id_mapel=b.kode_mapel_kegiatan
-                                            AND a.kelas='B'";
+                                            AND a.kelas='D'";
                         $execSeninA     =   mysqli_query($conn, $querySeninA);
 
                         if ($execSeninA) {
@@ -603,7 +603,7 @@ if (isset($_SESSION['message'])) {
                   <ul>
                      <?php  
                         $querySeninA    =   "SELECT * FROM jadwal a, mapel b WHERE id_hari=3 AND a.id_mapel=b.kode_mapel_kegiatan
-                                            AND a.kelas='B'";
+                                            AND a.kelas='D'";
                         $execSeninA     =   mysqli_query($conn, $querySeninA);
 
                         if ($execSeninA) {
@@ -629,7 +629,7 @@ if (isset($_SESSION['message'])) {
                   <ul>
                      <?php  
                         $querySeninA    =   "SELECT * FROM jadwal a, mapel b WHERE id_hari=4 AND a.id_mapel=b.kode_mapel_kegiatan
-                                            AND a.kelas='B'";
+                                            AND a.kelas='D'";
                         $execSeninA     =   mysqli_query($conn, $querySeninA);
 
                         if ($execSeninA) {
@@ -658,7 +658,7 @@ if (isset($_SESSION['message'])) {
                   <ul>
                      <?php  
                         $querySeninA    =   "SELECT * FROM jadwal a, mapel b WHERE id_hari=5 AND a.id_mapel=b.kode_mapel_kegiatan
-                                            AND a.kelas='B'";
+                                            AND a.kelas='D'";
                         $execSeninA     =   mysqli_query($conn, $querySeninA);
 
                         if ($execSeninA) {
