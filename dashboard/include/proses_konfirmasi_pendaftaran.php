@@ -5,7 +5,8 @@ session_start();
 include '../../koneksi/koneksi.php';
 
 date_default_timezone_get("Asia/Jakarta");
-
+echo "tes";
+die();
 if (isset($_GET['idd'])) {
 	$id 		=	$_GET['idd'];
 	$idu 		=	$_GET['idu'];

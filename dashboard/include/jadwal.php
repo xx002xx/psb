@@ -16,7 +16,7 @@ if (isset($_SESSION['message'])) {
     </div>";
 }
 ?>
-<a href="index.php?page=23&kelas=B" class="btn btn-primary pull-right btn-md" style="margin-right: 80px"><i
+<a href="index.php?page=23&kelas=A" class="btn btn-primary pull-right btn-md" style="margin-right: 80px"><i
       class="fa fa-plus"></i> Input jadwal Kelas A</a>
 
 <div class="row">
@@ -361,7 +361,7 @@ if (isset($_SESSION['message'])) {
 </div>
 </div>
 
-<a href="index.php?page=23&kelas=B" class="btn btn-primary pull-right btn-md" style="margin-right: 80px"><i
+<a href="index.php?page=23&kelas=C" class="btn btn-primary pull-right btn-md" style="margin-right: 80px"><i
       class="fa fa-plus"></i> Input jadwal Kelas C</a>
 
 <div class="row">
@@ -533,7 +533,8 @@ if (isset($_SESSION['message'])) {
    </div>
 </div>
 
-
+<a href="index.php?page=23&kelas=D" class="btn btn-primary pull-right btn-md" style="margin-right: 80px"><i
+      class="fa fa-plus"></i> Input jadwal Kelas D</a>
 <div class="row">
    <div class="col-sm-12 col-md-8 col-lg-10 col-lg-offset-1">
       <div class="card" style="margin-top: 50px">
